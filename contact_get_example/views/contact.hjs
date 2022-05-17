@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact</title>
+    <link rel='stylesheet' href='/styles/bootstrap.min.css' />
+    <link rel='stylesheet' href='/styles/style.css' />
+    <script src="/js/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <script>
+    $(document).ready(function(){
+      $("#submit").click(function() {
+        $.ajax({
+          type: "GET",
+          url: '/contact/1',
+          success: function(data){
+            if(data) {
+              $('#name').val(data.name);
+              $('#email').val(data.email);
+              $('textarea#message').val(data.message);
+            }
+          }
+        });
+      });
+    });
+    </script>
+    <div>
+    <div>
+    <nav class="navbar navbar-inverse" style="padding-left:130px;">
+           <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About us</a></li>
+          <li class="active"><a href="/contact">Contact us</a></li>
+        </ul>
+  </nav>
+  </div>
+    <br/>
+    <form class="form-horizontal" style="width: 50%;">
+      <div class="form-group">
+          <label for="name" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" name="email" placeholder="example@giu-uni.de" value="">
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="message" class="col-sm-2 control-label">Message</label>
+          <div class="col-sm-10">
+              <textarea class="form-control" rows="4" id="message" name="message" placeholder="SE Rocks!"></textarea>
+          </div>
+      </div>
+      <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+              <input id="submit" name="submit" type="button" value="Get Data" class="btn btn-primary">
+          </div>
+      </div>
+  </form>
+    </div>
+  </body>
+  </html>

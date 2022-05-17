@@ -18,7 +18,7 @@ app.use(express.static('public'));
  */
 app.get('/', function(req,res){
   res.render('index', {
-    title: "ICS 509 Software Architecture",
+    title: "SE II",
     name: "Dr. Amr Desouky"
   });
 });
@@ -38,7 +38,6 @@ app.get('/contact', (req, res) => {
 });
 
 app.post('/contact', (req, res) => {
-  const results = `name = ${req.body.name}, email = ${req.body.email}, message=${req.body.message}`;
   const postedData = {
     name: req.body.name,
     email: req.body.email,
