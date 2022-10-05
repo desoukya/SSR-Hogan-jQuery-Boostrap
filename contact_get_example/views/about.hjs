@@ -16,6 +16,7 @@
             <li><a href="/">Home</a></li>
             <li class="active"><a href="/about">About us</a></li>
             <li><a href="/contact">Contact us</a></li>
+            <li><a href="/users">Users</a></li>
           </ul>
       </nav>
     </div>

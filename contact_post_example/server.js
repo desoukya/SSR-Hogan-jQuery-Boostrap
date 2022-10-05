@@ -17,8 +17,13 @@ app.use(express.static('public'));
  * home page:
  */
 app.get('/', function(req,res){
+<<<<<<< HEAD:contact_post_example/server.js
   res.render('index', {
     title: "SE II",
+=======
+  return res.render('index', {
+    title: "ICS 509 Software Architecture",
+>>>>>>> cc20887 (add users g s):server.js
     name: "Dr. Amr Desouky"
   });
 });
@@ -27,14 +32,28 @@ app.get('/', function(req,res){
 * about page:
 */
 app.get('/about', (req, res) => {
-  res.render('about');
+  return res.render('about');
 });
 
 /**
 * contact page:
 */
 app.get('/contact', (req, res) => {
-  res.render('contact');
+  return res.render('contact');
+});
+
+/**
+* users page:
+*/
+app.get('/users', (req, res) => {
+  return res.render('users');
+});
+
+app.get('/users/list', (req, res) => {
+  return res.json([
+    { fname: 'Amr', lname: 'Desouky', handler: 'desoukya' },
+    { fname: 'Farah', lname: 'Maine', handler: 'fmaine' },
+  ]);
 });
 
 app.post('/contact', (req, res) => {
@@ -45,7 +64,7 @@ app.post('/contact', (req, res) => {
   };
 
   // return posted data back to client
-  res.send({
+  return res.send({
     status: 'Successful 200 Server response',
     ...postedData
   });
