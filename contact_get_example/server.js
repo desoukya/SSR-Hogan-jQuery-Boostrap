@@ -33,6 +33,23 @@ app.get('/contact', (req, res) => {
 });
 
 /**
+* users page:
+*/
+app.get('/users', (req, res) => {
+  res.render('users');
+});
+
+/**
+* users list:
+*/
+app.get('/users/list', (req, res) => {
+  res.json([
+    {fname: 'Amr', lnmae: 'Desouky', handler: 'desouky' },
+    {fname: 'Farah', lnmae: 'Manie', handler: 'fmanie' },
+  ]);
+});
+
+/**
 * populate contact form with the following data
 */
 app.get('/contact/1', (req, res) => {

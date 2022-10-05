@@ -17,13 +17,8 @@ app.use(express.static('public'));
  * home page:
  */
 app.get('/', function(req,res){
-<<<<<<< HEAD:contact_post_example/server.js
-  res.render('index', {
-    title: "SE II",
-=======
   return res.render('index', {
     title: "ICS 509 Software Architecture",
->>>>>>> cc20887 (add users g s):server.js
     name: "Dr. Amr Desouky"
   });
 });
