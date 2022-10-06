@@ -44,8 +44,8 @@ app.get('/users', (req, res) => {
 */
 app.get('/users/list', (req, res) => {
   res.json([
-    {fname: 'Amr', lnmae: 'Desouky', handler: 'desouky' },
-    {fname: 'Farah', lnmae: 'Manie', handler: 'fmanie' },
+    {fname: 'Amr', lname: 'Desouky', handler: 'desouky' },
+    {fname: 'Farah', lname: 'Manie', handler: 'fmanie' },
   ]);
 });
 
